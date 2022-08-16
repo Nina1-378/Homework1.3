@@ -11,17 +11,10 @@ public class Main {
         }
 
         System.out.println("Задание 2");
-        int clientDeviceYear = 2014;
-        int clientOS1 = 1;
-        if (clientDeviceYear >= 2015) {
-            System.out.print("Установите версию приложения для ");
-        } else {
-            System.out.print("Установите облегченную версию приложения для ");
-        }
-        if (clientOS1 == 1) {
-            System.out.println("Android по ссылке");
-        } else {
-            System.out.println("iOS по ссылке");
+        int yearOfManufactureOfTheDevice = 2014; {
+        var device = clientOS == 0 ? "iOS" : "Android";
+        var applicationVersion = yearOfManufactureOfTheDevice >= 2015 ? "версию" : "облегченную версию";
+            System.out.print("Установите " + applicationVersion + " приложения для " + device + " по ссылке");
         }
 
         System.out.println("Задание 3");
@@ -43,14 +36,15 @@ public class Main {
         }
 
         System.out.println("Задание 4. Вариант 2-й");
-        int deliveryDistance1 = 95;
+        int totalDeliveryDistance = 95;
         int deliveryDays = 1;
         int startInterval = 20;
-        int interval = 40;
-        if (deliveryDistance1 < startInterval) {
+        int subsequentIntervals = 40;
+        if (totalDeliveryDistance < startInterval) {
             System.out.println("Доставка займет дней: " + deliveryDays);
         } else {
-            deliveryDays = deliveryDays + (int) Math.ceil((deliveryDistance1 - startInterval) / (double) interval);
+            deliveryDays = deliveryDays +
+                    (int) Math.ceil((totalDeliveryDistance - startInterval) / (double) subsequentIntervals);
             System.out.println("Доставка займет дней: " + deliveryDays);
         }
 
